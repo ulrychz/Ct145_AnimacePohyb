@@ -1,0 +1,21 @@
+﻿@page "/animaceV2"
+
+<PageTitle>Animace</PageTitle>
+
+<div class="container">
+    <div id="znovu" onclick="location.reload()"></div>
+    @foreach (var item in Postavy)
+    {
+        <div class="postava" style="@item.Style" @onclick=item.Presun>
+            <p class="postavaPopis">@item.Jmeno</p>
+            <div class="progress" style="height:10px">
+                <div class="progress-bar" style="width:@item.Progress%;"></div>
+            </div>
+            <img src=@item.Obrazek style="width: 100%; @item.StyleTransform" />
+        </div>
+    }
+    
+</div>
+@code {
+
+}
